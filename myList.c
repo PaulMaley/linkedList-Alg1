@@ -24,6 +24,19 @@ int main(int argc, char** args) {
   // Sort the list 
   pLL = insertionSort(pLL);
   printList(pLL);
+
+  // Push a value
+  push(pLL, 100);
+  printList(pLL);
+
+  printf("Head of list: %d\n", peek(pLL));
+
+  // Pop a value
+  printf("Pop value: %d\n", pop(pLL));
+  printf("Pop value: %d\n", pop(pLL));
+  printf("Pop value: %d\n", pop(pLL));
+  printList(pLL);
+  
   return 0;
 }
 

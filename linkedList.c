@@ -94,3 +94,34 @@ struct LinkedList *insertionSort(struct LinkedList *l) {
   return l;
 }
 
+/* Stack-like operations */
+void push(struct LinkedList *l, int val){
+  struct ListElem *p = (struct ListElem *) malloc(sizeof(struct ListElem));
+  p->val = val;
+  if(l->head == NULL) {
+    p->next = NULL;
+  } else{
+    p->next = l->head;
+  }  
+  l->head = p;
+}
+
+
+/* Must not be empty*/
+int peek(struct LinkedList *l){
+  return l->head->val;  
+}
+
+
+/* Must not be empty*/
+int pop(struct LinkedList *l){
+  int val = 0; 
+  val = peek(l);
+  struct ListElem *p = l->head;
+  l->head = p->next;
+  // free memory 
+  free(p);
+  return val;
+}
+
+
